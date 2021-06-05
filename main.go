@@ -168,6 +168,7 @@ func main()  {
 		case "CO":
 			var un string
 			fmt.Scan(&un)
+			carts, inventory, users=Checkout(un, carts, users, inventory)
 
 
 
