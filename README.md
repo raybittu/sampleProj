@@ -11,3 +11,5 @@ The commands are - "CIT" - to create item
 "RE" - remove cart
 "GC" - get cart
 "CO" - to checkout
+
+after the commands, provide input as given in the description of task

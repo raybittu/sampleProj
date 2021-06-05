@@ -106,10 +106,12 @@ func main()  {
 	var carts []cart.Cart
 
 	for{
+		fmt.Println("enter any command")
 		var inp string
 		fmt.Scan(&inp)
 		switch inp {
 		case "CIT":
+			fmt.Println("enter inputs")
 			var (
 				c string
 				b string
@@ -119,6 +121,7 @@ func main()  {
 			i := item.Create(c, b, p)
 			items = append(items, *i)
 		case "AINV":
+			fmt.Println("enter inputs")
 			var (
 				ic string
 				b  string
@@ -129,6 +132,7 @@ func main()  {
 			inventory = AddInv(inventory, items, ic, b, q)
 
 		case "AUS":
+			fmt.Println("enter inputs")
 			var (
 				name string
 				w    float64
@@ -136,6 +140,7 @@ func main()  {
 			fmt.Scan(&name, &w)
 			users = append(users, *user.AddUser(name, w))
 		case "ATC":
+			fmt.Println("enter inputs")
 			var (
 				un string
 				ic string
@@ -145,6 +150,7 @@ func main()  {
 			fmt.Scan(&un, &ic, &b, &q)
 
 		case "UC":
+			fmt.Println("enter inputs")
 			var (
 				un string
 				ic string
@@ -154,6 +160,7 @@ func main()  {
 			fmt.Scan(&un, &ic, &b, &q)
 			carts = ADC(carts, users, items, un, ic, b, q)
 		case "RE":
+			fmt.Println("enter inputs")
 			var (
 				un string
 				ic string
@@ -162,18 +169,22 @@ func main()  {
 			fmt.Scan(&un, &ic, &b)
 			carts = Remove(carts, users, items, un, ic, b)
 		case "GC":
+			fmt.Println("enter inputs")
 			var name string
 			fmt.Scan(&name)
 			cart.GetCart(carts, name)
 		case "CO":
+			fmt.Println("enter inputs")
 			var un string
 			fmt.Scan(&un)
 			carts, inventory, users=Checkout(un, carts, users, inventory)
 
-
+		case "-1":
+			break
 
 		default:
-			break
+			fmt.Println("you have entered wrong command")
+
 		}
 
 	}
